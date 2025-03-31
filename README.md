@@ -94,9 +94,4 @@ Then you need to add the following configuration to your package.json:
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Author
-
-- **Charlie Chan**
-  - Email: hi@shinlms404.top
-  - GitHub: [shinlms404](https://github.com/shinlms404)
 
