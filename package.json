@@ -1,0 +1,70 @@
+{
+  "name": "@shinlms404/lintify-config",
+  "version": "0.0.1",
+  "description": "A Tool to help you lint your code and format it",
+  "keywords": [
+    "typescript",
+    "eslint-config",
+    "prettier-config"
+  ],
+  "homepage": "https://github.com/shinlms404/@shinlms404/lintify-config#readme",
+  "bugs": "https://github.com/shinlms404/@shinlms404/lintify-config/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shinlms404/@shinlms404/lintify-config.git"
+  },
+  "license": "MIT",
+  "author": "Charlie Chan <hi@shinlms404.top>",
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup --format esm,cjs --clean --dts",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "prepack": "bun run build",
+    "prepare": "bunx simple-git-hooks",
+    "release": "bumpp && bun publish",
+    "stub": "tsup --format esm",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit",
+    "watch": "tsup --format esm,cjs --watch"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "bunx lint-staged"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
+  },
+  "devDependencies": {
+    "@shinlms404/eslint-config": "^0.0.18",
+    "@shinlms404/prettier-config": "^0.1.6",
+    "@types/node": "^20.17.28",
+    "bumpp": "^9.11.1",
+    "lint-staged": "^15.5.0",
+    "prettier": "^3.5.3",
+    "simple-git-hooks": "^2.12.1",
+    "sucrase": "^3.35.0",
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.2",
+    "vitest": "^1.6.1"
+  },
+  "peerDependencies": {
+    "eslint": "^8.57.1"
+  },
+  "packageManager": "bun@1.2.7",
+  "publishConfig": {
+    "access": "public"
+  }
+}
